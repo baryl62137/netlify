@@ -3,9 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Demandez votre devis gratuit pour un escalier sur mesure - Roger Escalier, Calais">
-    <title>Devis gratuit | Roger Escalier</title>
+    <title>Demande envoyée - Roger Escalier</title>
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        .thank-you-container {
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+        }
+        .thank-you-content {
+            max-width: 600px;
+            background: white;
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        .thank-you-content h1 {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .checkmark {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 2rem;
+            background: #4CAF50;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+            animation: scaleIn 0.5s ease-out;
+        }
+        @keyframes scaleIn {
+            from {
+                transform: scale(0);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+        .thank-you-content p {
+            font-size: 1.2rem;
+            color: var(--text-dark);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+        .back-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: transform 0.3s, background 0.3s;
+        }
+        .back-button:hover {
+            background: #6d3410;
+            transform: translateY(-2px);
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
@@ -25,59 +87,16 @@
         </nav>
     </header>
 
-    <!-- Form Section -->
-    <section class="container" style="padding: 4rem 0; background: var(--bg-light);">
-        <h1 class="section-title">Demande de devis</h1>
-        
-        <div class="form-container">
-            <form name="devis" method="POST" data-netlify="true" action="/merci.html" enctype="multipart/form-data">
-                <input type="hidden" name="form-name" value="devis">
-                
-                <div class="form-group">
-                    <label for="nom">Nom Prénom *</label>
-                    <input type="text" id="nom" name="nom" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="ville">Ville du projet *</label>
-                    <input type="text" id="ville" name="ville" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="email">E-mail pour vous recontacter *</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="telephone">Téléphone *</label>
-                    <input type="tel" id="telephone" name="telephone" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="projet">Expliquez votre projet en quelques mots *</label>
-                    <textarea id="projet" name="projet" placeholder="Ex: Rénovation ou maison neuve" required></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label for="image">Si vous avez déjà une idée du style d'escalier que vous souhaitez, n'hésitez pas à nous envoyer une image</label>
-                    <input type="file" id="image" name="image" accept="image/*,.pdf">
-                    <small style="color: var(--text-light); display: block; margin-top: 0.5rem;">Format accepté : images et PDF (max. 15 Mo)</small>
-                </div>
-
-                <button type="submit" class="submit-btn">Envoyer ma demande</button>
-            </form>
+    <!-- Thank You Section -->
+    <div class="thank-you-container">
+        <div class="thank-you-content">
+            <div class="checkmark">✓</div>
+            <h1>Merci !</h1>
+            <p>Votre demande de devis a bien été reçue.<br>
+            Nous vous recontacterons dans les plus brefs délais.</p>
+            <a href="index.html" class="back-button">Retour à l'accueil</a>
         </div>
-
-        <div class="contact-info">
-            <h3>Vous pouvez aussi nous contacter directement</h3>
-            <p style="margin: 1rem 0;">
-                <a href="tel:0321362291">📞 03 21 36 22 91</a>
-            </p>
-            <p>
-                <a href="mailto:rgescaliercontact@gmail.com">📧 rgescaliercontact@gmail.com</a>
-            </p>
-        </div>
-    </section>
+    </div>
 
     <!-- Footer -->
     <footer>
